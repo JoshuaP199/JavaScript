@@ -115,7 +115,7 @@ function rememberUrgently(task) {   //adds task to front of array
     todoList.unshift(task);
 }
 
-console.log([1,2,3,2,1].indexof(2));        //returns index of first 2
+console.log([1,2,3,2,1].indexOf(2));        //returns index of first 2
 console.log([1,2,3,2,1].lastIndexOf(2));    //returns index of last 2
 
 console.log([0,1,2,3,4].slice(2,4));
@@ -127,3 +127,58 @@ function remove(array, index) {
 
 console.log(remove(['a', 'b', 'c', 'd', 'e']));
 
+//Strings and Their Properties-------------------------------------------------
+console.log("coconuts".slice(4,7));
+
+console.log("coconut".indexOf("u"));
+
+console.log("one two three".indexOf("ee"));
+
+console.log("   okay \n".trim());
+
+console.log(String(6).padStart(3, "0"));
+
+let sentence = "Secretarybirds specialize in stomping";
+let words = sentence.split(" ");
+console.log(words);
+console.log(words.join(". "));
+
+console.log("LA".repeat(3));
+let string = "abc";
+
+console.log(string.length);
+console.log(string[1]);
+
+//Rest Parameters--------------------------------------------
+function max(...numbers) {
+    let result = -Infinity;
+    for(let number of numbers) {
+        if (number > result) result = number;
+    }
+    return result;
+}
+
+console.log(max(4,1,9,-2));
+
+let numbers = [5,1,7];
+console.log(max(...numbers));
+
+let words2 = ['never', 'fully'];
+console.log(['will', ...words2, "understand"]);
+
+//The Math Object-----------------------------------------------
+function randomPointOnCircle(radius) {
+    let angle = Math.random() * 2 * Math.PI;
+    return {x: radius * Math.cos(angle), y: radius * Math.sin(radius)};
+}
+console.log(randomPointOnCircle(2));
+
+//Destructuring---------------------------------------------------------
+let {me} = {me: "Faraji", age:23};
+console.log(me);
+
+//JSON------------------------------------------------------------------
+let string1 = JSON.stringify({squirrel: false, events: ["weekend"]});
+console.log(string1);
+
+console.log(JSON.parse(string1).events);
